@@ -3,7 +3,11 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: cypress/base, tag: 8}
+  source:
+    repository: cypress/base
+    tag: 8
+  run:
+    path: npm install
 
 image_resource:
   type: docker-image

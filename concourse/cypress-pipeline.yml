@@ -11,9 +11,5 @@ jobs:
   plan:
   - get: resource-cypress
     trigger: true
-  - put: docker-image
-    params:
-      build: resource-cypress/concourse/
-
-#  - task: cypress-test
-#    file: resource-cypress/concourse/task-cypress-automation.yml
+  - task: cypress-test
+    file: resource-cypress/concourse/task-cypress-automation.yml
