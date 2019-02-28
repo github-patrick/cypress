@@ -10,7 +10,7 @@ resources:
   source:
     email: developer.sessions@gmail.com
     username: dockerdozens
-    password: Success1981
+    password: testing123
     repository: dockerdozens/cypress-automation
 
 jobs:
