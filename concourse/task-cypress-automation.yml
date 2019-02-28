@@ -1,12 +1,12 @@
 ---
 platform: linux
 
-image_resource:
-  type: docker-image
-  source: {repository: cypress/base, tag: 8}
-
-inputs:
-- name: resource-cypress
+#image_resource:
+#  type: docker-image
+#  source: {repository: cypress/base, tag: 8}
+#
+#inputs:
+#- name: resource-cypress
 
 run:
   path: resource-cypress/docker-compose.yml

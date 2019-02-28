@@ -12,5 +12,4 @@ jobs:
   - get: resource-cypress
     trigger: true
   - task: cypress-test
-    file: resource-tutorial/tutorials/basic/task-hello-world/task_hello_world.yml
     file: resource-cypress/concourse/task-cypress-automation.yml
