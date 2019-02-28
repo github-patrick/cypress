@@ -6,15 +6,28 @@ image_resource:
   source:
     repository: cypress/base
     tag: 8
-  run:
-    path: npm install
 
-image_resource:
-  type: docker-image
-  source: {repository: httpd, tag: alpine}
+outputs:
+- name: workspace
 
 inputs:
 - name: resource-cypress
 
 run:
-  path: resource-cypress/concourse/task_run_tests.sh
+        path: /bin/bash
+        args:
+        - -c
+        - |
+          output_dir=workspace
+
+          cat << EOF > "${output_dir}/Dockerfile"
+          FROM cypress/base:10 as TEST
+          WORKDIR /app
+          COPY package.json .
+          RUN npm install
+          COPY cypress cypress
+          COPY cypress.json .
+          RUN npx cypress run
+
+#run:
+#  path: resource-cypress/concourse/task_run_tests.sh
