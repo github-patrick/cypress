@@ -30,7 +30,7 @@ run:
           RUN npx cypress run
           EOF
 
-           cp -R ./ "${output_dir}/."
+           cp -R ./ "${output_dir}"
 
 
 
