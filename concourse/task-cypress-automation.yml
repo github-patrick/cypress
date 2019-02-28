@@ -9,4 +9,4 @@ inputs:
 - name: resource-cypress
 
 run:
-  path: resource-cypress/concourse/task_run_tests.sh
+  path: resource-cypress/docker-compose.yml
