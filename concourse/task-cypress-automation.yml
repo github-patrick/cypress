@@ -4,32 +4,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: cypress/base
-    tag: 8
-
-outputs:
-- name: workspace
-
-inputs:
-- name: resource-cypress
+    repository: dockerdozens/cypress-automation
 
 run:
-        path: /bin/bash
-        args:
-        - -c
-        - |
-          output_dir=workspace
-
-          cat << EOF > "${output_dir}/Dockerfile"
-          FROM cypress/base:10 as TEST
-          WORKDIR /app
-          COPY package.json .
-          RUN npm install
-          COPY cypress cypress
-          COPY cypress.json .
-          RUN npx cypress run
-          EOF
-
-
-#run:
-#  path: resource-cypress/concourse/task_run_tests.sh
+  path: /bin/bash

@@ -5,7 +5,25 @@ resources:
     uri: https://github.com/github-patrick/cypress.git
     branch: master
 
+- name: cypress-docker-image
+  type: docker-image
+  source:
+    email: developer.sessions@gmail.com
+    username: dockerdozens
+    password: Success1981
+    repository: dockerdozens/cypress-automation
+
 jobs:
+- name: publish
+  public: true
+  serial: true
+  plan:
+  - get: resource-cypress
+  - put: cypress-docker-image
+    params:
+      build: ./
+
+
 - name: job-automation-cypress
   public: true
   plan:
