@@ -30,9 +30,6 @@ run:
           RUN npx cypress run
           EOF
 
-           cp -R ./ "${output_dir}"
-
-
 
 #run:
 #  path: resource-cypress/concourse/task_run_tests.sh
