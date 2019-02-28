@@ -1,0 +1,25 @@
+version: '3'
+services:
+  web:
+    image: apache
+    build: ./webapp
+    container_name: apache
+    restart: always
+    # we can see the server running at "localhost:8081"
+    ports:
+      - "8081:80"
+
+  e2e:
+    image: cypress
+    build: ./
+    container_name: cypress
+    depends_on:
+      - web
+    # note: inside e2e container, the network allows accessing
+    # "web" host under name "web"
+    # so "curl http://web" would return whatever the webserver
+    # in the "web" container is cooking
+    # see https://docs.docker.com/compose/networking/
+    environment:
+      - CYPRESS_baseUrl=http://google.com
+    command: npx cypress run
