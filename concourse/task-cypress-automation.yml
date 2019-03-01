@@ -5,10 +5,9 @@ image_resource:
   type: docker-image
   source:
     repository: dockerdozens/cypress-automation
-
        run:
-            path: sh
-            args:
-            - -exc
-            - |
-                npx cypress run
+          path: sh
+          args:
+          - -exc
+          - |
+              npx cypress run
