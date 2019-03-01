@@ -5,9 +5,6 @@ image_resource:
   type: docker-image
   source:
     repository: dockerdozens/cypress-automation
-       run:
-          path: /bin/bash
-          args:
-          - -c
-          - |
-              npx cypress run
+
+run:
+  path: task_run_tests.sh
