@@ -6,8 +6,8 @@ image_resource:
   source:
     repository: dockerdozens/cypress-automation
        run:
-          path: sh
+          path: /bin/bash
           args:
-          - -exc
+          - -c
           - |
               npx cypress run
