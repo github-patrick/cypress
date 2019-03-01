@@ -7,4 +7,4 @@ image_resource:
     repository: dockerdozens/cypress-automation
 
 run:
-  path: npx cypress run
+  path: node_modules/cypress/bin/cypress run
