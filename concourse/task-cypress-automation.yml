@@ -6,5 +6,9 @@ image_resource:
   source:
     repository: dockerdozens/cypress-automation
 
+inputs:
+  - name: resource-cypress
+
+
 run:
-  path: task_run_tests.sh
+  path: resource-cypress/concourse/task_run_tests.sh
